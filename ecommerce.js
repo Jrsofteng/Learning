@@ -150,18 +150,20 @@ function addToCart(itemID,quantity ){
         const config = {
         promptMessage:" enter your preference : "
         }
-    }
-    const choice =  prompt(config.promptMessage)
+        const choice =  prompt(config.promptMessage)
+
     if(choice.toLowerCase() === "checkout"){
         displayCart()
-        Break;
+        break;
     }
    const productId = parseInt(choice);
    if( !product.find((item) => item.productId === productId)){
     console.log(" invalid item")
-    Continue
+    continue
    }
-
+    const quantity = parseInt(prompt (" enter the quantity :"))
+    addToCart(productId, quantity)
+}
   }
 startShopping()
     
